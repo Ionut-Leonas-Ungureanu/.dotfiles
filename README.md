@@ -1,0 +1,2 @@
+# .dotfiles
+stow configuration files
