@@ -16,6 +16,7 @@ return {
 					"ts_ls",
 					"html",
 					"cssls",
+					"bashls",
 				},
 			})
 		end,
@@ -32,6 +33,7 @@ return {
 			lspconfig.ts_ls.setup({ capabilities = capabilities })
 			lspconfig.html.setup({ capabilities = capabilities })
 			lspconfig.cssls.setup({ capabilities = capabilities })
+			lspconfig.bashls.setup({ capabilities = capabilities })
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})

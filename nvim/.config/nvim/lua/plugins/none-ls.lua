@@ -1,11 +1,26 @@
 return {
 	"nvimtools/none-ls.nvim",
-	dependencies = { "nvimtools/none-ls-extras.nvim" },
+	dependencies = { "nvimtools/none-ls-extras.nvim", "jay-babu/mason-null-ls.nvim" },
 	config = function()
+		require("mason-null-ls").setup({
+			ensure_installed = {
+				"shellcheck",
+				"shfmt",
+				"stylua",
+				"prettier",
+				"csharpier",
+				"clang_format",
+				"spell",
+				"eslint_d",
+				"cpplint",
+			},
+		})
+
 		local null_ls = require("null-ls")
 
 		null_ls.setup({
 			sources = {
+				null_ls.builtins.formatting.shfmt,
 				null_ls.builtins.formatting.stylua,
 				null_ls.builtins.formatting.prettier,
 				null_ls.builtins.formatting.csharpier,
@@ -13,6 +28,7 @@ return {
 				null_ls.builtins.completion.spell,
 				require("none-ls.diagnostics.eslint_d"),
 				require("none-ls.diagnostics.cpplint"),
+				null_ls.builtins.diagnostics.shellcheck,
 			},
 		})
 
