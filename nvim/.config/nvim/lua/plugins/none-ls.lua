@@ -4,7 +4,6 @@ return {
 	config = function()
 		require("mason-null-ls").setup({
 			ensure_installed = {
-				"shellcheck",
 				"shfmt",
 				"stylua",
 				"prettier",
@@ -28,7 +27,6 @@ return {
 				null_ls.builtins.completion.spell,
 				require("none-ls.diagnostics.eslint_d"),
 				require("none-ls.diagnostics.cpplint"),
-				null_ls.builtins.diagnostics.shellcheck,
 			},
 		})
 
