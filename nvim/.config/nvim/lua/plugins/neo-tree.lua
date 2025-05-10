@@ -17,6 +17,5 @@ return {
 		vim.keymap.set('n', '<leader>e', ":Neotree toggle filesystem reveal left<CR>", {})
 		vim.keymap.set('n', '<leader>f', ":Neotree focus reveal<CR>", {})
 		vim.keymap.set('n', '<leader>gg', ":Neotree git_status<CR>", {})
-	end,
-	cmd = "Neotree"
+	end
 }

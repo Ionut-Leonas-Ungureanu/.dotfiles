@@ -25,10 +25,14 @@ return {
 		"neovim/nvim-lspconfig",
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+			local pid = vim.fn.getpid()
 
 			local lspconfig = require("lspconfig")
 			lspconfig.lua_ls.setup({ capabilities = capabilities })
-			lspconfig.omnisharp.setup({ capabilities = capabilities })
+			lspconfig.omnisharp.setup({
+				cmd = {"omnisharp", "--languageserver", "--hostPID", tostring(pid)},
+				capabilities = capabilities
+			})
 			lspconfig.clangd.setup({ capabilities = capabilities })
 			lspconfig.ts_ls.setup({ capabilities = capabilities })
 			lspconfig.html.setup({ capabilities = capabilities })

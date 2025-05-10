@@ -12,6 +12,9 @@ return {
 		"nvim-telescope/telescope-ui-select.nvim",
 		config = function()
 			require("telescope").setup({
+				defaults = {
+					path_display = {"filename_first", "truncate"}
+				},
 				extensions = {
 					["ui-select"] = {
 						require("telescope.themes").get_dropdown{}
