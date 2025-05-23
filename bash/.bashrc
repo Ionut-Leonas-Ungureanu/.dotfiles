@@ -14,6 +14,7 @@ fi
 PATH="$HOME/.dotnet:$PATH"
 
 export PATH
+export DOTNET_ROOT=$HOME/.dotnet
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
@@ -34,5 +35,8 @@ alias docker-boot-enable="sudo systemctl enable --now docker"
 alias docker-boot-disable="sudo systemctl disable --now docker"
 alias docker-start="sudo systemctl start docker.service docker.socket"
 alias docker-stop="sudo systemctl stop docker.service docker.socket"
+
+# nvim shortcut
+alias n="nvim"
 
 eval "$(starship init bash)"
