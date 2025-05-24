@@ -39,4 +39,7 @@ alias docker-stop="sudo systemctl stop docker.service docker.socket"
 # nvim shortcut
 alias n="nvim"
 
+# utilities
+alias hook="~/.dotfiles/utilities/hook.sh"
+
 eval "$(starship init bash)"

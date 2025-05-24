@@ -42,9 +42,11 @@
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 
+font-family = "JetBrainsMono Nerd Font"
+
 theme = catppuccin-mocha
 
-background-opacity = 0.8
+background-opacity = 1
 background-blur = true
 
 window-theme = ghostty
