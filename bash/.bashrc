@@ -12,6 +12,7 @@ fi
 
 # Custom
 PATH="$HOME/.dotnet:$PATH"
+PATH=$PATH:/usr/local/go/bin
 
 export PATH
 export DOTNET_ROOT=$HOME/.dotnet
