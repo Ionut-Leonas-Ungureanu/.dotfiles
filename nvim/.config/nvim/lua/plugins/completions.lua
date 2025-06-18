@@ -4,7 +4,9 @@ return {
 	version = "1.*",
 	opts = {
 		keymap = { preset = "default",
-			['<enter>'] = {'accept', 'fallback'},},
+			['<enter>'] = {'accept', 'fallback'},
+			['<escape>'] = {'hide', 'fallback'},
+		},
 		appearance = {
 			nerd_font_variant = "mono",
 		},
