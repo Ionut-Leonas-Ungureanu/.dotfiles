@@ -1,5 +1,7 @@
 -- https://github.com/nanotee/nvim-lua-guide
 
+vim.opt.colorcolumn= "121"
+
 vim.opt.number = true
 vim.opt.relativenumber = true
 
@@ -43,4 +45,3 @@ vim.api.nvim_create_autocmd("BufEnter", {
 
 -- lazy plugin manager
 require("config.lazy")
-
