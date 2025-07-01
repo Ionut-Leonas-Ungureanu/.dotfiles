@@ -18,7 +18,7 @@ finance_app() {
 
 interview() {
 	session="$1"
-	project_path="~/workspace/InterviewPrep/"
+	project_path="~/workspace/interview-prep/InterviewPrep/"
 
 	tmux has-session -t $session 2>/dev/null
 
