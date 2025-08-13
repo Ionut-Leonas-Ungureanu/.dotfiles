@@ -55,3 +55,5 @@ window-titlebar-background = #064e8a
 window-decoration = none
 window-padding-y = 0
 window-padding-x = 0
+window-height = 10000
+window-width = 10000
