@@ -36,13 +36,16 @@ interview() {
 tankaboom() {
 	project_path="~/workspace/tankaboom"
 	frontend_path="$project_path/tankaboom.frontend/src"
+	backend_path="$project_path/tankaboom.server/"
 
 	tmux has-session -t $SESSION 2>/dev/null
 
 	if [ $? != 0 ]; then
 		tmux new-session -d -s $SESSION -n frontend "cd $frontend_path && nvim ."
-		tmux new-window -t $SESSION:1 -n frontend-testing "cd $frontend_path && python serve.py"
-		tmux new-window -t $SESSION:2 -n README "cd $project_path && nvim README.md"
+		tmux new-window -t $SESSION -n frontend-testing "cd $frontend_path && python serve.py"
+		tmux new-window -t $SESSION -n backend "cd $backend_path && nvim ."
+		tmux new-window -t $SESSION -n backend-testing "cd $backend_path && bash"
+		tmux new-window -t $SESSION -n README "cd $project_path && nvim README.md"
 		tmux select-window -t $SESSION:0
 	fi
 

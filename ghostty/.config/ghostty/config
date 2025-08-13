@@ -43,12 +43,15 @@
 # resize-overlay-duration = 4s 200ms
 
 font-family = "JetBrainsMono Nerd Font"
+font-size = 12
 
 theme = catppuccin-mocha
 
-background-opacity = 1
+background-opacity = 0.9
 background-blur = true
 
 window-theme = ghostty
 window-titlebar-background = #064e8a
-# window-decoration = none
+window-decoration = none
+window-padding-y = 0
+window-padding-x = 0
