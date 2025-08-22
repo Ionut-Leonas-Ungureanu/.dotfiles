@@ -1,0 +1,49 @@
+* {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+	color: #ffffff;
+}
+
+#bar {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+#workspaces {
+	padding-left: 10px;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background: transparent;
+    color: white;
+    border-bottom: 1px solid transparent;
+}
+
+#workspaces button.active {
+    background: #64727D;
+    border-bottom: 1px solid white;
+	border-radius: 50px;
+}
+
+#network, #pulseaudio, #power-profiles-daemon, #battery {
+    padding: 0 15px 0 0;
+}
+
+#power-profiles-daemon.performance {
+	color: red;
+}
+
+#power-profiles-daemon.balanced {
+	color: orange;
+}
+
+#power-profiles-daemon.power-saver {
+	color: greenyellow;
+}
+
+#custom-power {
+	padding-right: 15px;
+}
