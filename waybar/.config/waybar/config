@@ -2,7 +2,7 @@
     "layer": "top",
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "network", "power-profiles-daemon", "battery", "custom/power", "custom/notification"],
+    "modules-right": ["pulseaudio", "network", "power-profiles-daemon", "battery", "custom/notification"],
     "battery": {
         "format": "{capacity}% {icon}",
         "format-icons": ["", "", "", "", ""]
