@@ -53,6 +53,24 @@ tankaboom() {
 	tmux kill-session -t $SESSION
 }
 
+dev_tools_hub() {
+	project_path="~/workspace/dev-tools-hub"
+	frontend_path="$project_path/dev-tools-hub-frontend"
+	# backend_path="$project_path/"
+
+	tmux has-session -t $SESSION 2>/dev/null
+
+	if [ $? != 0 ]; then
+		tmux new-session -d -s $SESSION -n frontend "cd $frontend_path && nvim ."
+		tmux new-window -t $SESSION -n npm-start "cd $frontend_path && npm start"
+		tmux new-window -t $SESSION -n README "cd $project_path && nvim README.md"
+		tmux select-window -t $SESSION:0
+	fi
+
+	tmux attach -t $SESSION
+	tmux kill-session -t $SESSION
+}
+
 case $SESSION in
 	"financeapp")
 		finance_app 
@@ -62,5 +80,8 @@ case $SESSION in
 		;;
 	"tankaboom")
 		tankaboom
+		;;
+	"dev-tools-hub")
+		dev_tools_hub
 		;;
 esac

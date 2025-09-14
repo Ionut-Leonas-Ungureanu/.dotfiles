@@ -10,7 +10,7 @@ return {
 				"csharpier",
 				"clang_format",
 				"spell",
-				"eslint_d",
+				--"eslint_d",
 				"cpplint",
 			},
 		})
@@ -25,7 +25,7 @@ return {
 				null_ls.builtins.formatting.csharpier,
 				null_ls.builtins.formatting.clang_format,
 				null_ls.builtins.completion.spell,
-				require("none-ls.diagnostics.eslint_d"),
+				--require("none-ls.diagnostics.eslint_d"),
 				require("none-ls.diagnostics.cpplint"),
 			},
 		})

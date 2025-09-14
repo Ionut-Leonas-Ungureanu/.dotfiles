@@ -40,6 +40,14 @@ return {
 			lspconfig.cssls.setup({ capabilities = capabilities })
 			lspconfig.bashls.setup({ capabilities = capabilities })
 
+			-- Angular
+			lspconfig.angularls.setup({
+				cmd = { "ngserver", "--stdio", "--tsProbeLocations", ".", "--ngProbeLocations", "." },
+				filetypes = { "typescript", "html" },
+				root_dir = lspconfig.util.root_pattern("angular.json", "tsconfig.json", ".git"),
+				capabilities = capabilities,
+			})
+
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "gD", vim.lsp.buf.declaration, {})
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
