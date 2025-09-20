@@ -2,7 +2,12 @@ return {
 	{
 		"williamboman/mason.nvim",
 		config = function()
-			require("mason").setup()
+			require("mason").setup({
+				registries = {
+					"github:mason-org/mason-registry",
+					"github:Crashdummyy/mason-registry",
+				}
+			})
 		end,
 	},
 	{
@@ -11,12 +16,11 @@ return {
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"lua_ls",
-					"omnisharp",
 					"clangd",
-					"ts_ls",
 					"html",
 					"cssls",
 					"bashls",
+					"roslyn"
 				},
 			})
 		end,
@@ -26,27 +30,25 @@ return {
 		dependencies = { "saghen/blink.cmp" },
 		config = function()
 			local capabilities = require("blink.cmp").get_lsp_capabilities()
-			local pid = vim.fn.getpid()
+			-- local pid = vim.fn.getpid()
 
-			local lspconfig = require("lspconfig")
-			lspconfig.lua_ls.setup({ capabilities = capabilities })
-			lspconfig.omnisharp.setup({
-				cmd = { "OmniSharp", "--languageserver", "--hostPID", tostring(pid) },
-				capabilities = capabilities,
-			})
-			lspconfig.clangd.setup({ capabilities = capabilities })
-			lspconfig.ts_ls.setup({ capabilities = capabilities })
-			lspconfig.html.setup({ capabilities = capabilities })
-			lspconfig.cssls.setup({ capabilities = capabilities })
-			lspconfig.bashls.setup({ capabilities = capabilities })
+			vim.lsp.config('lua_ls', {capabilities = capabilities})
+			vim.lsp.config('clangd', { capabilities = capabilities })
+			-- vim.lsp.config('ts_ls', { capabilities = capabilities })
+			vim.lsp.config('html', { capabilities = capabilities })
+			vim.lsp.config('cssls', { capabilities = capabilities })
+			vim.lsp.config('bashls', { capabilities = capabilities })
 
 			-- Angular
-			lspconfig.angularls.setup({
-				cmd = { "ngserver", "--stdio", "--tsProbeLocations", ".", "--ngProbeLocations", "." },
-				filetypes = { "typescript", "html" },
-				root_dir = lspconfig.util.root_pattern("angular.json", "tsconfig.json", ".git"),
+			vim.lsp.config('angularls', {
+				cmd = { "ngserver", "--stdio", "--tsProbeLocations", "../..,?/node_modules", "--ngProbeLocations", "../../@angular/language-server/node_modules,?/node_modules/@angular/language-server/node_modules", "--angularCoreVersion", "" },
+				filetypes = { "typescript", "html", "typescriptreact", "typescript.tsx", "htmlangular" },
+				root_markers = { "angular.json", "nx.json" },
 				capabilities = capabilities,
 			})
+
+			-- C#
+			vim.lsp.config("roslyn", { capabilities = capabilities })
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "gD", vim.lsp.buf.declaration, {})
