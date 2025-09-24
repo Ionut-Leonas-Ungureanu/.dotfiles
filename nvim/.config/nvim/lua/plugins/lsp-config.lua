@@ -20,7 +20,7 @@ return {
 					"html",
 					"cssls",
 					"bashls",
-					"roslyn"
+					-- "roslyn"
 				},
 			})
 		end,

@@ -17,7 +17,7 @@ PATH=$PATH:/usr/local/go/bin
 export PATH
 export DOTNET_ROOT=$HOME/.dotnet
 export PATH="$PATH:/home/uionutleonas/.dotnet/tools"
-export JAVA_HOME=/usr/lib/jvm/temurin-11-jdk
+export JAVA_HOME=/home/uionutleonas/.jdk
 export PATH=$JAVA_HOME/bin:$PATH
 export ANDROID_SDK_ROOT=$HOME/Android/Sdk
 export ANDROID_HOME=$ANDROID_SDK_ROOT
