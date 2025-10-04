@@ -1,49 +1,64 @@
 * {
-    background: transparent;
-    border: none;
-    box-shadow: none;
-	color: #ffffff;
+  background-color: #2d353b;
+  color: #d3c6aa;
+  border: none;
+  box-shadow: none;
+  color: #ffffff;
 }
 
-#bar {
-    background: transparent;
-    border: none;
-    box-shadow: none;
+/* #bar { */
+/*   background: transparent; */
+/*   border: none; */
+/*   box-shadow: none; */
+/* } */
+
+.modules-left {
+  margin-left: 8px;
+}
+
+.modules-right {
+  margin-right: 8px;
 }
 
 #workspaces {
-	padding-left: 10px;
+  padding-left: 10px;
 }
 
 #workspaces button {
-    padding: 0 5px;
-    background: transparent;
-    color: white;
-    border-bottom: 1px solid transparent;
+  all: initial;
+  padding: 0 6px;
+  margin: 0 1.5px;
+  min-width: 9px;
+  opacity: 0.5;
+  border: 2px solid transparent;
 }
 
 #workspaces button.active {
-    background: #64727D;
-    border-bottom: 1px solid white;
-	border-radius: 50px;
+  opacity: 1;
+  border-bottom: 2px solid white;
 }
 
 #network, #pulseaudio, #power-profiles-daemon, #battery {
-    padding: 0 15px 0 0;
+  min-width: 12px;
+  margin: 0 7.5px;
 }
 
 #power-profiles-daemon.performance {
-	color: red;
+  color: red;
 }
 
 #power-profiles-daemon.balanced {
-	color: orange;
+  color: orange;
 }
 
 #power-profiles-daemon.power-saver {
-	color: greenyellow;
+  color: greenyellow;
 }
 
 #custom-notification, #custom-power {
-	padding-right: 15px;
+  padding-right: 15px;
+}
+
+tooltip {
+  padding: 2px;
 }

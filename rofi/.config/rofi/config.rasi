@@ -1,19 +1,11 @@
 * {
     font: "Figtree 13";
-    g-spacing: 10px;
-    g-margin: 0;
-    b-color: #000000FF;
-    fg-color: #FFFFFFFF;
-    fgp-color: #888888FF;
-    b-radius: 8px;
-    g-padding: 8px;
-    hl-color: #FFFFFFFF;
-    hlt-color: #000000FF;
-    alt-color: #111111FF;
-    wbg-color: #000000CC;
-    w-border: 2px solid;
-    w-border-color: #FFFFFFFF;
-    w-padding: 12px;
+    spacing: 10px;
+    margin: 0;
+    background-color: #2d353b;
+    text-color: #d3c6aa;
+    border-radius: 8px;
+    padding: 8px;
 }
 
 configuration {
@@ -35,68 +27,68 @@ listview {
 window {
     transparency: "real";
     width: 450px;
-    border-radius: @b-radius;
-    background-color: @wbg-color;
-    border: @w-border;
-    border-color: @w-border-color;
-    padding: @w-padding;
+    border-radius: 8px;
+    background-color: #2d353b;
+    border: 2px solid;
+    border-color: #d3c6aa;
+    padding: 12px;
 }
 
 prompt {
-    text-color: @fg-color;
-	padding: 0 5px 0 0;
+    text-color: #d3c6aa;
+    padding: 0 5px 0 0;
 }
 
 inputbar {
     children: ["prompt", "entry"];
-    spacing: @g-spacing;
+    spacing: 10px;
 }
 
 entry {
     placeholder: "Search Apps";
-    text-color: @fg-color;
-    placeholder-color: @fgp-color;
+    text-color: #d3c6aa;
+    placeholder-color: #d3c6aa80; /* 50% opacity of text color for placeholder */
 }
 
 mainbox {
-    spacing: @g-spacing;
-    margin: @g-margin;
-    padding: @g-padding;
+    spacing: 10px;
+    margin: 0;
+    padding: 8px;
     children: ["inputbar", "listview", "message"];
 }
 
 element {
-    spacing: @g-spacing;
-    margin: @g-margin;
-    padding: @g-padding;
+    spacing: 10px;
+    margin: 0;
+    padding: 8px;
     border: 0px solid;
-    border-radius: @b-radius;
-    border-color: @b-color;
+    border-radius: 8px;
     background-color: transparent;
-    text-color: @fg-color;
+    text-color: #d3c6aa;
 }
 
 element normal.normal {
-	background-color: transparent;
-	text-color: @fg-color;
+    background-color: transparent;
+    text-color: #d3c6aa;
 }
 
 element alternate.normal {
-	background-color: @alt-color;
-	text-color: @fg-color;
+    background-color: #3a454a; /* Slightly darker Everforest shade for contrast */
+    text-color: #d3c6aa;
 }
 
 element selected.active {
-	background-color: @hl-color;
-	text-color: @hlt-color;
+    background-color: #dbbc7f;
+    text-color: #2d353b; /* Dark text for contrast on highlight */
 }
 
 element selected.normal {
-	background-color: @hl-color;
-	text-color: @hlt-color;
+    background-color: #dbbc7f;
+    text-color: #2d353b;
 }
 
 message {
-    background-color: red;
+    background-color: #e67e80; /* Everforest muted red */
     border: 0px solid;
+    text-color: #2d353b;
 }
