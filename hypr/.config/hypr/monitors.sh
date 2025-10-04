@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "monitors.sh started at $(date)" >> /home/uionutleonas/.config/hypr/monitors.log
+
 if [ "$(upower -d | grep "lid-is-closed" | awk '{print $2}')" = "yes" ]; then
 	echo "Lid is closed, disabling monitor..."
 	sed -i '/monitor = eDP-1,/c\monitor = eDP-1, disabled' ~/.config/hypr/hyprland.conf
