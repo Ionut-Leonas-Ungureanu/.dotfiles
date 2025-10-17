@@ -45,3 +45,5 @@ vim.api.nvim_create_autocmd("BufEnter", {
 
 -- lazy plugin manager
 require("config.lazy")
+
+vim.g.transparent_enabled = true
