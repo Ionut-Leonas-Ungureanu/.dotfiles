@@ -5,7 +5,7 @@ return {
 		config = function()
 			local telescope = require('telescope.builtin')
 			vim.keymap.set('n', '<C-p>', telescope.find_files, {desc = 'Telescope find files' })
-			vim.keymap.set('n', '<C-S-f>', telescope.live_grep, {desc = 'Telscope live grep' })
+			vim.keymap.set('n', '<leader>/', telescope.live_grep, {desc = 'Telscope live grep' })
 		end
 	},
 	{
