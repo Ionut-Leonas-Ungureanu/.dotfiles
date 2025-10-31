@@ -47,3 +47,21 @@ vim.api.nvim_create_autocmd("BufEnter", {
 require("config.lazy")
 
 vim.g.transparent_enabled = true
+
+
+-- breakpoints settings
+vim.fn.sign_define('DapBreakpoint',
+  {
+    text = '🔴',
+    texthl = 'DapBreakpointSymbol',
+    linehl = 'DapBreakpoint',
+    numhl = 'DapBreakpoint'
+  })
+
+vim.fn.sign_define('DapBreakpointRejected',
+  {
+    text = '⭕',
+    texthl = 'DapStoppedSymbol',
+    linehl = 'DapBreakpoint',
+    numhl = 'DapBreakpoint'
+  })
