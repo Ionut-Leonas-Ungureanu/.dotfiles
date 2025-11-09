@@ -3,11 +3,7 @@ return {
   priority = 1000,
   config = function()
     require("everforest").setup({
-		-- transparent = true,
-		-- styles = {
-		-- 	sidebars = "transparent",
-		-- 	floats = "transparent",
-		-- }
+			transparent_background_level=1,
 	})
 
     -- Apply the colorscheme

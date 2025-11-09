@@ -11,12 +11,6 @@ vim.opt.smartindent = true
 
 vim.g.mapleader = " "
 
-vim.diagnostic.config({
-	virtual_text = true,
-	signs = true,
-	underline = true,
-})
-
 vim.keymap.set("n", "<A-j>", ":m .+1<CR>==")
 vim.keymap.set("n", "<A-Down>", ":m .+1<CR>==")
 vim.keymap.set("n", "<A-k>", ":m .-2<CR>==")
