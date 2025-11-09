@@ -1,0 +1,23 @@
+* {
+	font-size: 14px;
+	font-family: "JetBrainsMono Nerd Font"
+}
+
+.control-center {
+	background-color: #2d353b;
+	margin: 10px;
+}
+
+.control-center .notification-group,
+.control-center .notification-background,
+.notification {
+	background-color: #2d353b;
+}
+
+.notification {
+	padding: 5px;
+}
+
+.notification-row .notification-background .notification .notification-default-action:hover {
+	background-color: #2d353b;
+}

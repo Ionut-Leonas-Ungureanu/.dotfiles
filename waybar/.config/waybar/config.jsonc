@@ -6,18 +6,18 @@
   "modules-right": ["pulseaudio", "network", "power-profiles-daemon", "battery", "custom/notification"],
   "battery": {
     "format": "{capacity}% {icon}",
-    "format-discharging": "{icon}",
-    "format-charging": "{icon}",
+    "format-discharging": "{capacity}% {icon}",
+    "format-charging": "{capacity}% {icon}",
     "format-plugged": "",
     "format-icons": {
       "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
       "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     },
     "format-full": "󰂅",
-    "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
-    "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
-    "interval": 5,
-    "on-click": "omarchy-menu power",
+    // "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
+    // "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
+    // "interval": 5,
+    // "on-click": "omarchy-menu power",
     "states": {
       "warning": 20,
       "critical": 10

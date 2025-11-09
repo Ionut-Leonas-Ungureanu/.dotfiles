@@ -59,6 +59,14 @@
   padding-right: 15px;
 }
 
+#battery.warning {
+	color: yellow;
+}
+
+#battery.critical {
+	color: red;
+}
+
 tooltip {
   padding: 2px;
 }
