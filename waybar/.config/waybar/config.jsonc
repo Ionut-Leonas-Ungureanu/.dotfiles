@@ -3,7 +3,7 @@
   "height": 26,
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["clock"],
-  "modules-right": ["pulseaudio", "network", "power-profiles-daemon", "battery", "custom/notification"],
+  "modules-right": ["pulseaudio", "network", "battery", "custom/notification"],
   "battery": {
     "format": "{capacity}% {icon}",
     "format-discharging": "{capacity}% {icon}",
@@ -32,17 +32,17 @@
     "on-click": "activate",
     "sort-by-number": true
   },
-  "power-profiles-daemon": {
-    "format": "{icon}",
-    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-    "tooltip": true,
-    "format-icons": {
-      "default": "",
-      "performance": "",
-      "balanced": "",
-      "power-saver": ""
-    }
-  },
+  // "power-profiles-daemon": {
+  //   "format": "{icon}",
+  //   "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+  //   "tooltip": true,
+  //   "format-icons": {
+  //     "default": "",
+  //     "performance": "",
+  //     "balanced": "",
+  //     "power-saver": ""
+  //   }
+  // },
   "pulseaudio": {
     "format": "{icon}",
     "on-click": "pavucontrol",

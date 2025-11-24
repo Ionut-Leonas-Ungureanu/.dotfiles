@@ -16,8 +16,8 @@ PATH=$PATH:/usr/local/go/bin
 
 export PATH
 export DOTNET_ROOT=$HOME/.dotnet
-export PATH="$PATH:/home/uionutleonas/.dotnet/tools"
-export JAVA_HOME=/home/uionutleonas/.jdk
+export PATH="$PATH:$HOME/.dotnet/tools"
+export JAVA_HOME=$HOME/.jdk
 export PATH=$JAVA_HOME/bin:$PATH
 export ANDROID_SDK_ROOT=$HOME/Android/Sdk
 export ANDROID_HOME=$ANDROID_SDK_ROOT
@@ -35,6 +35,13 @@ if [ -d ~/.bashrc.d ]; then
     done
 fi
 unset rc
+
+[[ $- != *i* ]] && return
+
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+PS1='[\u@\h \W]\$ '
+
 
 # personal aliases
 # docker
@@ -66,4 +73,4 @@ export NVM_DIR="$HOME/.nvm"
 
 
 # Load Angular CLI autocompletion.
-source <(ng completion script)
+# source <(ng completion script)
