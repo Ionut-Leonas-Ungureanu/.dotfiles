@@ -24,6 +24,9 @@ alias docker-stop="sudo systemctl stop docker.service docker.socket"
 
 # nvim shortcut
 alias n="nvim"
+monitors() {
+	sh ~/.config/hypr/monitors.sh
+}
 
 # utilities
 alias hook="~/.dotfiles/utilities/hook.sh"
