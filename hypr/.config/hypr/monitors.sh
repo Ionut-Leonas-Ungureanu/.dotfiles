@@ -12,15 +12,15 @@
 
 echo "Configuring the monitors..."
 if [[ "$#" -eq 0 ]]; then
-	cp monitors-default.conf monitors.conf
+	cp ~/.config/hypr/monitors-default.conf ~/.config/hypr/monitors.conf
 else
 	while [[ "$#" -gt 0 ]]; do
 		case $1 in
 			2|docked)
-				cp monitors-docked.conf monitors.conf
+				cp ~/.config/hypr/monitors-docked.conf ~/.config/hypr/monitors.conf
 				;;
 			*)
-				cp monitors-default.conf monitors.conf
+				cp ~/.config/hypr/monitors-default.conf ~/.config/hypr/monitors.conf
 				;;
 		esac
 		shift
