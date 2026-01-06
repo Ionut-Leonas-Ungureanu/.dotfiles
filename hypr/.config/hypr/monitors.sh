@@ -1,31 +1,17 @@
 #!/bin/bash
 
-# echo "monitors.sh started at $(date)" >> /home/uionutleonas/.config/hypr/monitors.log
-
-# if [ "$(upower -d | grep "lid-is-closed" | awk '{print $2}')" = "yes" ]; then
-# 	echo "Lid is closed, disabling monitor..."
-# 	sed -i '/monitor = eDP-1,/c\monitor = eDP-1, disabled' ~/.config/hypr/hyprland.conf
-# else
-# 	echo "Lid is open, setting up lid monitor..."
-# 	sed -i '/monitor = eDP-1,/c\monitor = eDP-1, 1920x1080@60, 0x0, 1' ~/.config/hypr/hyprland.conf
-# fi
-
-echo "Configuring the monitors..."
-if [[ "$#" -eq 0 ]]; then
-	cp ~/.config/hypr/monitors-default.conf ~/.config/hypr/monitors.conf
-else
-	while [[ "$#" -gt 0 ]]; do
-		case $1 in
-			2|docked)
-				cp ~/.config/hypr/monitors-docked.conf ~/.config/hypr/monitors.conf
-				;;
-			*)
-				cp ~/.config/hypr/monitors-default.conf ~/.config/hypr/monitors.conf
-				;;
-		esac
-		shift
-	done
-fi
-
-echo "Reloading hyprland..."
-hyprctl reload
+dbus-monitor --system \
+  "type='signal',sender='org.freedesktop.login1'" |
+while read -r line; do
+    if [[ "$line" =~ boolean\ (true|false) ]]; then
+        state="${BASH_REMATCH[1]}"
+        # echo "LidClosed = $state"
+		if [[ $state == "true" ]]; then
+			echo "lid closed"
+			hyprctl keyword monitor "eDP-1, disable"
+		else
+			echo "lid opened"
+			hyprctl keyword monitor "eDP-1, 1920x1080@60, 0x0, 1"
+		fi
+    fi
+done
