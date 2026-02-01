@@ -50,6 +50,24 @@ return {
 			-- C#
 			vim.lsp.config("roslyn", { capabilities = capabilities })
 
+			-- Avalonia
+			vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
+				pattern = { "*.axaml" },
+				callback = function(event)
+					vim.lsp.start {
+						name = "avalonia",
+						cmd = { "avalonia-ls" },
+						root_dir = vim.fn.getcwd(),
+						capabilities = capabilities
+					}
+				end
+			})
+			vim.filetype.add({
+				extension = {
+					axaml = "xml",
+				},
+			})
+
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "gD", vim.lsp.buf.declaration, {})
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
