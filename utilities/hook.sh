@@ -71,6 +71,31 @@ dev_tools_hub() {
 	tmux kill-session -t $SESSION
 }
 
+gym_journal() {
+	project_path="~/workspace/gym-journal"
+	app_path="$project_path/gym-journal-app"
+	database_path="$project_path/gym-journal-database"
+
+	# execute prerequisites
+	cd $app_path
+	avalonia-solution-parser Gym.Journal.sln > /tmp/Gym.Journal.json
+	dotnet build
+
+	cd $project_path
+	tmux has-session -t $SESSION 2>/dev/null
+
+	if [ $? != 0 ]; then
+		tmux new-session -d -s $SESSION -n app-project "cd $app_path && nvim ."
+		tmux new-window -t $SESSION "cd $app_path && bash"
+		tmux new-window -t $SESSION -n database "cd $database_path && nvim ."
+		tmux new-window -t $SESSION -n README "cd $project_path && nvim README.md"
+		tmux select-window -t $SESSION:0
+	fi
+
+	tmux attach -t $SESSION
+	tmux kill-session -t $SESSION
+}
+
 case $SESSION in
 	"financeapp")
 		finance_app 
@@ -83,5 +108,8 @@ case $SESSION in
 		;;
 	"dev-tools-hub")
 		dev_tools_hub
+		;;
+	"gym-journal")
+		gym_journal
 		;;
 esac
