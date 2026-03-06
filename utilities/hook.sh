@@ -72,7 +72,7 @@ dev_tools_hub() {
 }
 
 gym_journal() {
-	project_path="~/workspace/gym-journal"
+	project_path="$HOME/workspace/gym-journal"
 	app_path="$project_path/gym-journal-app"
 	database_path="$project_path/gym-journal-database"
 

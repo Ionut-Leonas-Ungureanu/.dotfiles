@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+THEME=$(ls ~/.config/themes | rofi -dmenu -p "")
+
+[ -n "$THEME" ] && switch-theme "$THEME"

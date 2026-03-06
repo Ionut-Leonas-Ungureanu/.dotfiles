@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+THEME="$1"
+THEME_DIR="$HOME/.config/themes/$THEME"
+
+if [ ! -d "$THEME_DIR" ]; then
+    echo "Theme not found"
+    exit 1
+fi
+
+# Waybar
+ln -sf "$THEME_DIR/waybar/style.css" ~/.config/waybar/style.css
+ln -sf "$THEME_DIR/waybar/config" ~/.config/waybar/config
+
+# Rofi
+ln -sf "$THEME_DIR/rofi/config.rasi" ~/.config/rofi/config.rasi
+
+# GTK
+# ln -sf "$THEME_DIR/gtk/settings.ini" ~/.config/gtk-3.0/settings.ini
+
+# Reload apps
+killall waybar
+waybar &
+
+hyprctl reload
