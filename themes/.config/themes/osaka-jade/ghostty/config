@@ -1,0 +1,85 @@
+# This is the configuration file for Ghostty.
+#
+# This template file has been automatically created at the following
+# path since Ghostty couldn't find any existing config files on your system:
+#
+#   /home/johnny/.config/ghostty/config
+#
+# The template does not set any default options, since Ghostty ships
+# with sensible defaults for all options. Users should only need to set
+# options that they want to change from the default.
+#
+# Run `ghostty +show-config --default --docs` to view a list of
+# all available config options and their default values.
+#
+# Additionally, each config option is also explained in detail
+# on Ghostty's website, at https://ghostty.org/docs/config.
+#
+# Ghostty can reload the configuration while running by using the menu
+# options or the bound key (default: Command + Shift + comma on macOS and
+# Control + Shift + comma on other platforms). Not all config options can be
+# reloaded while running; some only apply to new windows and others may require
+# a full restart to take effect.
+
+# Config syntax crash course
+# ==========================
+# # The config file consists of simple key-value pairs,
+# # separated by equals signs.
+# font-family = Iosevka
+# window-padding-x = 2
+#
+# # Spacing around the equals sign does not matter.
+# # All of these are identical:
+# key=value
+# key= value
+# key =value
+# key = value
+#
+# # Any line beginning with a # is a comment. It's not possible to put
+# # a comment after a config option, since it would be interpreted as a
+# # part of the value. For example, this will have a value of "#123abc":
+# background = #123abc
+#
+# # Empty values are used to reset config keys to default.
+# key =
+#
+# # Some config options have unique syntaxes for their value,
+# # which is explained in the docs for that config option.
+# # Just for example:
+# resize-overlay-duration = 4s 200ms
+# background / foreground
+background = #111c18
+foreground = #C1C497
+
+# cursor
+cursor-color = #D7C995
+
+# selection
+selection-background = #C1C497
+selection-foreground = #111C18
+
+# normal colors
+palette = 0=#23372B
+palette = 1=#FF5345
+palette = 2=#549e6a
+palette = 3=#459451
+palette = 4=#509475
+palette = 5=#D2689C
+palette = 6=#2DD5B7
+palette = 7=#F6F5DD
+
+# bright colors
+palette = 8=#53685B
+palette = 9=#db9f9c
+palette = 10=#63b07a
+palette = 11=#E5C736
+palette = 12=#ACD4CF
+palette = 13=#75bbb3
+palette = 14=#8CD3CB
+palette = 15=#9eebb3
+
+font-family = FiraCode Nerd Font
+#font-family = JetBrainsMono Nerd Font
+font-size = 12.0
+
+background-opacity = 0.8

@@ -8,12 +8,26 @@ if [ ! -d "$THEME_DIR" ]; then
     exit 1
 fi
 
+# Hypr
+ln -sf "$THEME_DIR/backgrounds" ~/.config/hypr/
+
+# Kitty
+ln -sf "$THEME_DIR/kitty" ~/.config/
+
 # Waybar
-ln -sf "$THEME_DIR/waybar/style.css" ~/.config/waybar/style.css
-ln -sf "$THEME_DIR/waybar/config" ~/.config/waybar/config
+ln -sf "$THEME_DIR/waybar" ~/.config/
 
 # Rofi
-ln -sf "$THEME_DIR/rofi/config.rasi" ~/.config/rofi/config.rasi
+ln -sf "$THEME_DIR/rofi" ~/.config/
+
+# Neovim
+ln -sf "$THEME_DIR/nvim/color-scheme.lua" ~/.config/nvim/lua/plugins/
+
+# Ghostty
+ln -sf "$THEME_DIR/ghostty" ~/.config/
+
+# Btop
+ln -sf "$THEME_DIR/btop/btop.theme" ~/.config/btop/themes/btop.theme
 
 # GTK
 # ln -sf "$THEME_DIR/gtk/settings.ini" ~/.config/gtk-3.0/settings.ini
@@ -21,5 +35,8 @@ ln -sf "$THEME_DIR/rofi/config.rasi" ~/.config/rofi/config.rasi
 # Reload apps
 killall waybar
 waybar &
+
+killall hyprpaper
+hyprpaper &
 
 hyprctl reload

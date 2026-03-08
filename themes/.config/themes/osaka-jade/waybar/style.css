@@ -1,0 +1,79 @@
+@define-color bg #111c18;
+@define-color fg #c1c497;
+
+* {
+  background-color: @bg;
+  color: @fg;
+
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  min-height: 0;
+  font-family: 'JetBrainsMono Nerd Font';
+  font-size: 12px;
+}
+
+/* #bar { */
+/*   background: transparent; */
+/*   border: none; */
+/*   box-shadow: none; */
+/* } */
+
+.modules-left {
+  margin-left: 8px;
+}
+
+.modules-right {
+  margin-right: 8px;
+}
+
+#workspaces {
+  padding-left: 10px;
+}
+
+#workspaces button {
+  all: initial;
+  padding: 0 6px;
+  margin: 0 1.5px;
+  min-width: 9px;
+  opacity: 0.5;
+  border: 2px solid transparent;
+}
+
+#workspaces button.active {
+  opacity: 1;
+  border-bottom: 2px solid white;
+}
+
+#network, #pulseaudio, #power-profiles-daemon, #battery {
+  min-width: 12px;
+  margin: 0 7.5px;
+}
+
+#power-profiles-daemon.performance {
+  color: red;
+}
+
+#power-profiles-daemon.balanced {
+  color: orange;
+}
+
+#power-profiles-daemon.power-saver {
+  color: greenyellow;
+}
+
+#custom-notification, #custom-power {
+  padding-right: 15px;
+}
+
+#battery.warning {
+	color: yellow;
+}
+
+#battery.critical {
+	color: red;
+}
+
+tooltip {
+  padding: 2px;
+}

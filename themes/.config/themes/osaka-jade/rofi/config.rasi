@@ -1,0 +1,94 @@
+* {
+    font: "Fira Code 13";
+    spacing: 10px;
+    margin: 0;
+    background-color: #111c18;   /* Osaka Jade background */
+    text-color: #C1C497;         /* Osaka Jade foreground */
+    border-radius: 8px;
+    padding: 8px;
+}
+
+configuration {
+    modi: "drun";
+    show-icons: true;
+    display-drun: "";
+}
+
+listview {
+    columns: 1;
+    lines: 7;
+    fixed-height: true;
+    fixed-columns: true;
+    cycle: false;
+    scrollbar: false;
+    border: 0px solid;
+}
+
+window {
+    transparency: "real";
+    width: 450px;
+    border-radius: 8px;
+    background-color: #111c18;   /* Osaka Jade background */
+    border: 2px solid;
+    border-color: #C1C497;       /* Osaka Jade foreground for border */
+    padding: 12px;
+}
+
+prompt {
+    text-color: #C1C497;         /* Osaka Jade foreground */
+    padding: 0 5px 0 0;
+}
+
+inputbar {
+    children: ["prompt", "entry"];
+    spacing: 10px;
+}
+
+entry {
+    placeholder: "Search Apps";
+    text-color: #C1C497;         /* Osaka Jade foreground */
+    placeholder-color: #C1C49780; /* 50% opacity for placeholder */
+}
+
+mainbox {
+    spacing: 10px;
+    margin: 0;
+    padding: 8px;
+    children: ["inputbar", "listview", "message"];
+}
+
+element {
+    spacing: 10px;
+    margin: 0;
+    padding: 8px;
+    border: 0px solid;
+    border-radius: 8px;
+    background-color: transparent;
+    text-color: #C1C497;         /* Osaka Jade foreground */
+}
+
+element normal.normal {
+    background-color: transparent;
+    text-color: #C1C497;
+}
+
+element alternate.normal {
+    background-color: #23372B;   /* Slightly darker Osaka Jade shade for contrast */
+    text-color: #C1C497;
+}
+
+element selected.active {
+    background-color: #509475;   /* Osaka Jade accent color for selection */
+    text-color: #111c18;         /* Dark text for contrast */
+}
+
+element selected.normal {
+    background-color: #509475;
+    text-color: #111c18;
+}
+
+message {
+    background-color: #E5C736;   /* Osaka Jade yellow accent for messages */
+    border: 0px solid;
+    text-color: #111c18;         /* Dark text for contrast */
+}

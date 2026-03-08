@@ -1,0 +1,1 @@
+/home/johnny/.config/themes/osaka-jade/nvim/color-scheme.lua
