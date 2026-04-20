@@ -19,7 +19,7 @@ while read -r line; do
 			echo "lid opened"
 			hyprctl keyword monitor "eDP-1, 1920x1080@60, 0x0, 1"
 			sleep 0.2
-			hyprctl output remove HEADLESS-1
+			# hyprctl output remove HEADLESS-1
 		fi
     fi
 done
