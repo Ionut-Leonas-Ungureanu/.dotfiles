@@ -83,3 +83,6 @@ font-family = FiraCode Nerd Font
 font-size = 14.0
 
 background-opacity = 0.8
+
+working-directory = home
+gtk-single-instance = false

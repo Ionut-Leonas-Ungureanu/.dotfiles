@@ -105,3 +105,6 @@ background-opacity = 0.8
 # Font
 font-family = FiraCode Nerd Font
 font-size = 12.0
+
+working-directory = home
+gtk-single-instance = false
